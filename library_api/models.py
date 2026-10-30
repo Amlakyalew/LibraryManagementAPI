@@ -11,3 +11,10 @@ class Author(models.Model):
     date_of_birth = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    isbn = models.CharField(max_length=13, unique=True)
+    genre = models.CharField(max_length=50)
+    published_date = models.DateField()
+    available = models.BooleanField(default=True)
