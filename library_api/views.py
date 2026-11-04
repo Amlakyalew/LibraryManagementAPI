@@ -8,7 +8,7 @@ class AuthorViewSet(ModelViewSet):
     http_method_names = ['head', 'options', 'get', 'post', 'put', 'delete']
 
     def get_permissions(self):
-        if self.request.method in ['POST', 'PATCH', 'DELETE']:
+        if self.request.method in ['POST', 'PUT', 'DELETE']:
             return [IsAuthenticated()]
         return [AllowAny()]
     
@@ -24,7 +24,7 @@ class BookViewSet(ModelViewSet):
     http_method_names = ['head', 'options', 'get', 'post', 'put', 'delete']
     
     def get_permissions(self):
-        if self.request.method in ['POST', 'PATCH', 'DELETE']:
+        if self.request.method in ['POST', 'PUT', 'DELETE']:
             return [IsAuthenticated()]
         return [AllowAny()]
     
