@@ -9,6 +9,8 @@ djangorestframework = "*"
 django-filter = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 black = "*"
